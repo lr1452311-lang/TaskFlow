@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="layout">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">✓</span>
+                <h2>TaskFlow</h2>
+            </div>
+
+            <p class="menu-titulo">MENU PRINCIPAL</p>
+
+            <nav>
+                <a href="#inicio" class="menu-item ativo">⌂ Dashboard</a>
+                <a href="#nova-tarefa" class="menu-item">＋ Nova tarefa</a>
+                <a href="#minhas-tarefas" class="menu-item">▤ Minhas tarefas</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Organize seu dia.</p>
+                <span>Um passo de cada vez.</span>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo">
+
+            <header class="topo" id="inicio">
+                <div>
+                    <p class="subtitulo">VISÃO GERAL</p>
+                    <h1>Dashboard</h1>
+                    <p>Acompanhe suas tarefas e organize sua produtividade.</p>
+                </div>
+
+                <a href="#nova-tarefa" class="botao-topo">+ Nova tarefa</a>
+            </header>
+
+            <!-- DASHBOARD -->
+            <section class="dashboard">
+
+                <div class="card">
+                    <h3>Total de tarefas</h3>
+                    <h2>0</h2>
+                    <span>Suas tarefas cadastradas</span>
+                </div>
+
+                <div class="card">
+                    <h3>Pendentes</h3>
+                    <h2>0</h2>
+                    <span>Tarefas a fazer</span>
+                </div>
+
+                <div class="card">
+                    <h3>Em andamento</h3>
+                    <h2>0</h2>
+                    <span>Tarefas em progresso</span>
+                </div>
+
+                <div class="card">
+                    <h3>Concluídas</h3>
+                    <h2>0</h2>
+                    <span>Tarefas finalizadas</span>
+                </div>
+
+            </section>
+
+            <!-- FORMULÁRIO -->
+            <section class="formulario" id="nova-tarefa">
+                <div class="secao-cabecalho">
+                    <div>
+                        <p class="subtitulo">ORGANIZAÇÃO</p>
+                        <h2>Nova tarefa</h2>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="campo campo-completo">
+                        <label for="titulo">Nome da tarefa</label>
+                        <input type="text" id="titulo" placeholder="Ex.: Estudar para a prova">
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" placeholder="Descreva o que precisa ser feito..."></textarea>
+                    </div>
+
+                    <div class="campos">
+                        <div class="campo">
+                            <label for="prioridade">Prioridade</label>
+                            <select id="prioridade">
+                                <option value="baixa">Baixa</option>
+                                <option value="media">Média</option>
+                                <option value="alta">Alta</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="prazo">Prazo</label>
+                            <input type="date" id="prazo">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="adicionar">+ Adicionar tarefa</button>
+            </section>
+
+            <!-- FILTROS -->
+            <section class="filtros">
+                <div class="secao-cabecalho">
+                    <div>
+                        <p class="subtitulo">LOCALIZAR</p>
+                        <h2>Buscar tarefas</h2>
+                    </div>
+                </div>
+
+                <div class="filtros-campos">
+                    <input type="text" id="pesquisa" placeholder="⌕ Pesquisar pelo nome...">
+
+                    <select id="filtroPrioridade">
+                        <option value="">Todas as prioridades</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+
+                    <select id="filtroStatus">
+                        <option value="">Todos os status</option>
+                        <option value="pendente">A Fazer</option>
+                        <option value="andamento">Em Andamento</option>
+                        <option value="concluida">Concluídas</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- QUADRO KANBAN -->
+            <section class="area-kanban" id="minhas-tarefas">
+                <div class="secao-cabecalho">
+                    <div>
+                        <p class="subtitulo">ACOMPANHAMENTO</p>
+                        <h2>Minhas tarefas</h2>
+                    </div>
+                    <span class="etiqueta">QUADRO KANBAN</span>
+                </div>
+
+                <div class="kanban">
+
+                    <div class="coluna">
+                        <h3>A Fazer</h3>
+                    </div>
+
+                    <div class="coluna">
+                        <h3>Em Andamento</h3>
+                    </div>
+
+                    <div class="coluna">
+                        <h3>Concluídas</h3>
+                    </div>
+
+                </div>
+            </section>
+
+            <footer class="rodape">
+                <p>TaskFlow © 2026 — Organização e produtividade.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,463 @@
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #25283b;
+}
+
+/* ==============================
+   ESTRUTURA PRINCIPAL
+============================== */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==============================
+   MENU LATERAL
+============================== */
+
+.sidebar {
+    width: 250px;
+    background: #202238;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 55px;
+}
+
+.logo h2 {
+    font-size: 23px;
+}
+
+.logo-icon {
+    background: #7165e8;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.menu-titulo {
+    color: #9295aa;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-item {
+    color: #c6c8d5;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 9px;
+    transition: 0.2s;
+}
+
+.menu-item:hover,
+.menu-item.ativo {
+    background: #7165e8;
+    color: white;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 30px;
+    color: #c6c8d5;
+    line-height: 1.7;
+}
+
+.sidebar-footer span {
+    color: #9295aa;
+    font-size: 13px;
+}
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+============================== */
+
+.conteudo {
+    flex: 1;
+    min-width: 0;
+    padding: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.topo h1 {
+    font-size: 32px;
+    margin: 5px 0 10px;
+}
+
+.topo p:last-child {
+    color: #85889b;
+    font-size: 14px;
+}
+
+.subtitulo {
+    color: #7165e8;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+}
+
+.botao-topo {
+    background: #7165e8;
+    color: white;
+    padding: 13px 20px;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao-topo:hover {
+    background: #5d51d0;
+}
+
+/* ==============================
+   DASHBOARD
+============================== */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 23px;
+    border-radius: 13px;
+    box-shadow: 0 3px 15px #20223808;
+    border: 1px solid #ececf2;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px #20223812;
+}
+
+.card h3 {
+    color: #85889b;
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    color: #7165e8;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.card span {
+    color: #a0a2b0;
+    font-size: 12px;
+}
+
+/* ==============================
+   SEÇÕES
+============================== */
+
+.formulario,
+.filtros,
+.area-kanban {
+    background: white;
+    padding: 25px;
+    border-radius: 13px;
+    margin-bottom: 25px;
+    border: 1px solid #ececf2;
+    box-shadow: 0 3px 15px #20223808;
+}
+
+.secao-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.secao-cabecalho h2 {
+    font-size: 20px;
+    color: #25283b;
+}
+
+.etiqueta {
+    background: #f0efff;
+    color: #7165e8;
+    padding: 8px 12px;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* ==============================
+   FORMULÁRIO
+============================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.campo label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #55586d;
+    margin-bottom: 9px;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select,
+.filtros input,
+.filtros select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e1e2eb;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #25283b;
+    outline: none;
+    transition: 0.2s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus,
+.filtros input:focus,
+.filtros select:focus {
+    border-color: #7165e8;
+    box-shadow: 0 0 0 3px #7165e81a;
+}
+
+.formulario textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.campos {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0 20px;
+}
+
+.formulario button {
+    background: #7165e8;
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.formulario button:hover {
+    background: #5d51d0;
+    transform: translateY(-1px);
+}
+
+/* ==============================
+   FILTROS
+============================== */
+
+.filtros-campos {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 13px;
+}
+
+.filtros {
+    margin-bottom: 30px;
+}
+
+/* ==============================
+   QUADRO KANBAN
+============================== */
+
+.kanban {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.coluna {
+    background: #f7f7fb;
+    padding: 18px;
+    border-radius: 11px;
+    min-height: 220px;
+    border: 1px solid #ececf2;
+}
+
+.coluna h3 {
+    color: #55586d;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.coluna p {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #e8e8ef;
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.rodape {
+    text-align: center;
+    padding: 25px 10px;
+    color: #999bab;
+    font-size: 12px;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 1100px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filtros-campos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filtros-campos input {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 800px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .conteudo {
+        padding: 25px 18px;
+    }
+
+    .kanban {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .dashboard {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .card h2 {
+        font-size: 25px;
+    }
+
+    .topo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .campos {
+        flex-direction: column;
+    }
+
+    .filtros-campos {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros-campos input {
+        grid-column: auto;
+    }
+
+    .formulario,
+    .filtros,
+    .area-kanban {
+        padding: 18px;
+    }
+}
